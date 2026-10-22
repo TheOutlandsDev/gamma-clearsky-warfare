@@ -59,6 +59,16 @@
       "sha256": "86bd987addce3506a4ad9904dbee83d6b7064c7d5c298d30685ddc8fccb89329"
     },
     {
+      "path": "addons/loot-transfer-guard/gamedata/scripts/zzzzz_local_loot_transfer_guard.script",
+      "bytes": 805,
+      "sha256": "e2f65f12b1c761620ca0df9e30ce92d36281917e5819f0287cf80d35d4fd4252"
+    },
+    {
+      "path": "addons/loot-transfer-guard/README.md",
+      "bytes": 3541,
+      "sha256": "ce898b66daf769ac4ef0fbad4399417a94268e355538d8b19dcf39947f0e8c8a"
+    },
+    {
       "path": "addons/practical-starters/gamedata/configs/items/settings/mod_new_game_loadouts_zzzz_local_practical.ltx",
       "bytes": 422,
       "sha256": "5c74c86296c2f6afa75a4e7d2de151ed5cca0e5dbc23f4958e3145765dea0fea"
@@ -75,13 +85,13 @@
     },
     {
       "path": "addons/provenance.json",
-      "bytes": 3854,
-      "sha256": "365d03bd5399aa3c0e6a98eaa1cb6cec5be8f920dbd1f6d43bb8180cffc3cc15"
+      "bytes": 4419,
+      "sha256": "3acd171fe7b15255ed264598a562a753145a657c17330f02facc78f1b9945987"
     },
     {
       "path": "addons/README.md",
-      "bytes": 2453,
-      "sha256": "2732b6e35a6d9a62a0115cf69eb08a16a2c2274e961a6a69be7a211934e5542f"
+      "bytes": 2756,
+      "sha256": "979c46abf96ed2b1a98657ba1ef9fc119c7676b4f5562026c3954e6aeeecc3f4"
     },
     {
       "path": "addons/warfare-unarmed-zombies/gamedata/configs/mod_system_zz_local_warfare_unarmed_zombies.ltx",
@@ -100,8 +110,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 512,
-      "sha256": "e9d598df941c55464dc786fc41963d4f3ca9babb13b950ec2a5ba94be51c5197"
+      "bytes": 953,
+      "sha256": "584b67478ffdfb4482fbc947031ebf4791b470931528fb4d630adf320567f541"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -169,14 +179,19 @@
       "sha256": "36e9be4ee049b9a84458ba57ad7f89e82c8ead9dfd75e2d4a335b436fda69dce"
     },
     {
+      "path": "docs/DEPENDENCIES.md",
+      "bytes": 21925,
+      "sha256": "ba9bccc91cf88fff08ba23052aeeb16ae0536197395bd0e65c51cc881cd7007f"
+    },
+    {
       "path": "docs/INSTALL.md",
-      "bytes": 2741,
-      "sha256": "882fd220aff635fa8cd83c090d51aa137eededb0cac8e306fad02f169d6d06ea"
+      "bytes": 3474,
+      "sha256": "22fd6b89641d51ab9e3c8231439d683c0aeb60d6246410e5e354cddef5557dfd"
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 2804,
-      "sha256": "d40d149c6a2683593fd4d45c47bc21bb94e2e0a2be95092a2549b7dcd2f1dba7"
+      "bytes": 3563,
+      "sha256": "101721dd4733b66dddce023e4f009fa34f0a8f230384ae6b6f9cbf3fe30ad9ae"
     },
     {
       "path": "LICENSE",
@@ -195,18 +210,18 @@
     },
     {
       "path": "PUBLICATION.md",
-      "bytes": 1641,
-      "sha256": "8052c33626431fc6504ee0c02267c727e7c89b61792d6672a5f57e781d2a1951"
+      "bytes": 2701,
+      "sha256": "caa373ce2f15efab0aca1b0ae592ee487c232f4e9264c89b734609227dd5ea34"
     },
     {
       "path": "README.md",
-      "bytes": 4207,
-      "sha256": "3342bef354ec86ebdc9cfeb4c8f6eb29150f4c0972662ca632584b823587f63d"
+      "bytes": 5599,
+      "sha256": "b160a7e4b7f04efb56eb63ec042fa8980435003d21ed3c478cebdab73039c71d"
     },
     {
       "path": "THIRD-PARTY.md",
-      "bytes": 4178,
-      "sha256": "ff380dd16d74dcd4a9c8fd4e6e20963b750a5675aab966b9e6e3d849cd31bb1d"
+      "bytes": 8323,
+      "sha256": "e82d21777c85c74229a9569bb0f2edd888f8365be1aa600bcfb9900138cbdad7"
     },
     {
       "path": "tools/verify_publication.py",

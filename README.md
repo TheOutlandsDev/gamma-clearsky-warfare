@@ -8,11 +8,11 @@ An unofficial, source-first companion for a slower Clear Sky Warfare campaign in
 
 | Track | Available here | Status |
 |---|---|---|
-| Solo | Optional original carry, starter equipment, allegiance and zombie addons; documented campaign targets | Static checks exist for the original local revision. Public packaging needs gameplay testing. |
+| Solo | Optional original carry, starter equipment, allegiance, zombie and loot-transfer addons; documented campaign targets | Static checks exist for the original local revision. Public packaging needs gameplay testing. |
 | Experimental co-op | Host/join launcher source, one-shot game bridge, isolated-copy preflight, save-backup and content checks | Local/mock validation only; requires independently installed, matching xrRazom copies and a real two-PC test. |
 | AlifeTactics | Compatibility plan and fair-AI preset proposal | Not installed or bundled. The proposed solo engine update is not a co-op engine update. |
 
-Start with [installation and safe test setup](docs/INSTALL.md), then follow the [two-PC test checklist](docs/COOP-TESTING.md). Use [Issues](https://github.com/osheaconnor580-creator/gamma-clearsky-warfare/issues/new/choose) for reproducible bugs, balance observations, and feature requests.
+Start with [installation and safe test setup](docs/INSTALL.md). The [dependency and setup map](docs/DEPENDENCIES.md) lists author sources, versions, relative install locations, load priority and how the private integrations work. The [publishing decision record](THIRD-PARTY.md) distinguishes original source we can publish, licensed dependencies awaiting artifact review and components that remain reference-only. Then follow the [two-PC test checklist](docs/COOP-TESTING.md). Use [Issues](https://github.com/TheOutlandsDev/gamma-clearsky-warfare/issues/new/choose) for reproducible bugs, balance observations, and feature requests.
 
 ## Campaign goals
 
@@ -24,7 +24,13 @@ Start with [installation and safe test setup](docs/INSTALL.md), then follow the 
 - Direct limb treatment/surgery and gradual corpse searching through upstream dependencies.
 - Optional future AI changes emphasizing cover and individual flanking, without added superhuman spotting or aim bonuses.
 
-Some of these goals are documented from a private testing installation but are **not redistributed here**. See [feature and validation status](docs/STATUS.md) and [component permissions](THIRD-PARTY.md). The trading, medical, loot-search and long-Warfare whole-file overrides remain excluded pending separate source/permission review.
+Some of these goals are documented from a private testing installation but are **not redistributed here**. See [feature and validation status](docs/STATUS.md) and [component permissions](THIRD-PARTY.md). The trading, medical, Western Goods and long-Warfare whole-file overrides remain excluded pending separate source/permission review.
+
+The independent [loot-transfer guard](addons/loot-transfer-guard/README.md) is now available as an optional addon. It requires separately obtained REDUX and compatible GAMMA inventory APIs; no REDUX files or assets are included. The currently installed REDUX source/assets are unchanged; earlier references to REDUX adaptations should be read as this separate integration wrapper.
+
+## V1 product requirements
+
+V1 targets one guided installer/launcher for **both solo and private host/join co-op**, retaining the campaign goals above. It should acquire dependencies through cleared distribution routes and provide verification/repair, save backups and reversible updates. The host game runs the co-op world. Permission clearance, independent clean installation, representative solo gameplay and real two-PC synchronization tests are release gates. These are requirements, not claims about the current source companion; see the [setup and integration boundaries](docs/DEPENDENCIES.md).
 
 ## Co-op architecture
 

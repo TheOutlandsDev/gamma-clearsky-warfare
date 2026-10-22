@@ -1,3 +1,9 @@
+# Dependency and setup documentation update - 2026-10-22
+
+- Document author sources, versions, relative install paths, integration behavior and unresolved publishing permissions.
+- Publish the original optional loot-transfer guard without REDUX source or assets.
+- Clarify V1 solo/co-op requirements versus current validation, correct the REDUX integration description and refresh canonical repository links and source hashes.
+
 # Changelog
 
 ## 0.1.0 - 2026-10-22
