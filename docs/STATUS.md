@@ -2,6 +2,8 @@
 
 Status recorded 2026-10-22. Historical local testing is evidence about that revision, not a guarantee for a fresh installation or the public packaging.
 
+**Current blocker: the private full solo mod stack exits during new-game creation.** A previous save-load and trader-window check passed on an earlier revision; that result does not establish fresh-campaign stability. An initial Lua squad-lifecycle defect was corrected privately, but later desktop exits remain unresolved. See [the mod-stack investigation and offline checks](STARTUP-INVESTIGATION.md). No successful post-fix new-game run is claimed, and no runtime test is currently requested from the maintainer.
+
 | Feature | Public delivery | Evidence and remaining test |
 |---|---|---|
 | Carry 1.5x | Original optional addon | Local native LuaJIT checks covered saved-base reset, callback order, nonstacking, normal bonuses and removal of the old key. Public packaging needs an in-game carry check. |
