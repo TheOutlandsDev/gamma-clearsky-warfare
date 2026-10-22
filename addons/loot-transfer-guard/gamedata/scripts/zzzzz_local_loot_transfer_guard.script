@@ -1,0 +1,18 @@
+-- Personal GAMMA integration for Priler's Looting Takes Time REDUX (Update 2).
+-- Native Take All and stack transfers call Action_Move without the mod's mouse
+-- wrappers. Keep unrevealed items on the corpse until their search completes.
+-- Wrap the installed method so startup/bolt fixes and ordinary trade survive.
+local base_action_move = ui_inventory.UIInventory.Action_Move
+
+function ui_inventory.UIInventory:Action_Move(obj, bag)
+    if self.mode == "loot" and bag == "npc_bag" and self.npc_id and obj then
+        local item = obj
+        if type(item) == "number" then
+            item = level.object_by_id(item)
+        end
+        if item and zzzz_loot_searching.is_item_hidden(self.npc_id, item:id()) then
+            return
+        end
+    end
+    return base_action_move(self, obj, bag)
+end
