@@ -2,6 +2,8 @@
 
 This is a source companion, not a complete modpack installer. Downloading this repository alone does not reproduce the private customized campaign.
 
+Read the [dependency and setup map](DEPENDENCIES.md) for official acquisition links, portable folder roots, exact mod-relative integration paths and the distinction between MO2 overlays and root engine files. Check [publishing decisions](../THIRD-PARTY.md) before redistributing any upstream files. A documented private path is a reference, not a supplied package or permission grant.
+
 ## Solo optional addons
 
 1. Obtain and verify your own regular single-player GAMMA installation.
@@ -11,6 +13,8 @@ This is a source companion, not a complete modpack installer. Downloading this r
 5. Test carry/gear bonuses, new-game starter selections, faction behavior and new zombie spawns as relevant. Preserve a pre-addon save.
 
 The finite carry addon deliberately restores a normal 50 kg difficulty baseline before applying 1.5x. Existing item masses and ordinary equipment bonuses are retained. It supersedes the old unlimited addon; do not enable both.
+
+The optional [loot-transfer guard](../addons/loot-transfer-guard/README.md) requires a separately obtained, matching REDUX installation and compatible GAMMA inventory APIs. It supplies only an original wrapper. Do not enable it without those dependencies, and do not install a second copy if your private integration already has the same script.
 
 ## Experimental co-op
 

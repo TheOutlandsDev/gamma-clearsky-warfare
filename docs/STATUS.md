@@ -9,10 +9,13 @@ Status recorded 2026-10-22. Historical local testing is evidence about that revi
 | Clear Sky allegiance | Original wrappers | Local tests scoped locking to true Clear Sky Warfare campaigns. Save/load and companion behavior need independent testing. |
 | Unarmed zombies | Original wrapper/config | Additional newly spawned zombie-creature squads; armed Zombified faction remains separate. Combat/population balance needs playtesting. |
 | Clear Sky hub / barter / parts pricing | Design documented; adapted implementations excluded | A prior local revision loaded a save and opened Spore's trade window. Later pricing/charge changes had static/native tests only, not real wallet-transaction confirmation. |
-| Medical / Western Goods / loot search | Upstream links only | Local adaptations are not included or licensed by this repo. Co-op compatibility is unverified. |
+| Original loot-transfer guard | Original optional addon; separately acquired REDUX required | Wraps inventory transfer to block unrevealed corpse items during Take All/stack moves. All 42 official installed REDUX gamedata files matched the pinned source archive; only our wrapper is added. Compile-only check passed; no new in-game or co-op validation. |
+| Medical / Western Goods / REDUX implementation and assets | Upstream references only | Medical/WG adaptations and upstream files are excluded. The original guard above is separate from REDUX. Co-op compatibility is unverified. |
 | Slow strategic Warfare and crash fixes | Design documented; whole-file overrides excluded | Local Lua/config checks existed. Long-campaign pacing and the full private revision are not reproduced here. |
 | Co-op host/join frontend and bridge | Original source | Original local setup had preflight/mock validation; public sanitization receives fresh static tests. Real two-PC join, AI/item synchronization, Warfare captures, transitions and persistence are unverified. |
 | AlifeTactics | Proposed plan | Requires a separate engine trial and replacement review. No runtime validation. |
+
+The [dependency guide](DEPENDENCIES.md) documents the private test setup and missing pieces; it does not turn it into a reproducible public installer. Both solo and co-op remain V1 product requirements. An unresolved permission or gameplay synchronization issue remains a release gate; a source upload does not establish completion.
 
 ## Suggested balance observations
 
