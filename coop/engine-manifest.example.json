@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "engine": "xrRazom 1.4",
+  "verified_files": [
+    {"file": "Anomaly/bin/AnomalyDX11.exe", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    {"file": "Anomaly/bin/GameNetworkingSockets.dll", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    {"file": "Anomaly/bin/steam_api64.dll", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}
+  ]
+}
