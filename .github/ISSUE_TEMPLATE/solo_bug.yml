@@ -1,0 +1,63 @@
+name: Solo bug or crash
+description: Report a reproducible problem in the single-player profile.
+title: "[Solo bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing. Reports here are public. Share only the smallest useful, redacted error excerpt. **Do not post IP addresses (including Tailscale addresses), credentials, authentication keys, full saves, or raw logs.** Remove Windows usernames and personal paths from excerpts and screenshots.
+        Static checks and successful startup do not establish campaign stability. Please report what you actually tested.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked my report and attachments for the private information listed above.
+          required: true
+  - type: textarea
+    id: versions
+    attributes:
+      label: Build and profile
+      description: List this repository's tag or commit, GAMMA version, Anomaly version, engine build/date, profile name, and relevant addon versions. Write unknown where needed.
+      placeholder: |
+        Repository tag or commit:
+        GAMMA / Anomaly:
+        Engine build or date:
+        Profile / relevant addons:
+    validations:
+      required: true
+  - type: dropdown
+    id: campaign
+    attributes:
+      label: Where does it happen?
+      options:
+        - Existing solo campaign
+        - New solo campaign
+        - Main menu or startup
+        - More than one of these
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: Include the map, relevant item or NPC, and whether it happens every time. Mention changes made since the last working session.
+      placeholder: |
+        1. Load...
+        2. Use / visit...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: What should happen, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Minimal redacted error excerpt (optional)
+      description: Paste only the relevant fatal error or a few surrounding lines. No full logs, saves, IP addresses, keys, or personal paths.
+      render: text

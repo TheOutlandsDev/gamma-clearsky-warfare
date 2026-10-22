@@ -1,0 +1,67 @@
+name: Balance feedback
+description: Share observations about Warfare, loot, trading, medical treatment, carry weight, or combat.
+title: "[Balance]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Concrete examples help more than a general difficulty rating. A short session is useful feedback; please distinguish it from an extended campaign test. Co-op feedback is experimental and does not imply that solo features have been ported or verified in co-op.
+        This report is public. **Do not post IP addresses (including Tailscale addresses), credentials, authentication keys, full saves, or raw logs.** Redact usernames and personal paths from excerpts and screenshots.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked my report and attachments for the private information listed above.
+          required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode and role
+      options:
+        - Solo
+        - Experimental co-op host
+        - Experimental co-op client
+        - Experimental co-op - both sides
+    validations:
+      required: true
+  - type: textarea
+    id: versions
+    attributes:
+      label: Build, profile, and campaign context
+      description: Repository tag/commit, GAMMA and engine versions, profile, difficulty, and approximate in-game campaign age. For co-op, include both builds and whether content fingerprints match. No device names or addresses.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Main area
+      options:
+        - Warfare pace / faction behavior
+        - Spotting / aim / tactical combat
+        - Loot availability or searching
+        - Gun trading / prices / barter
+        - Medical treatment
+        - Carry weight / starting equipment
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: What did you observe?
+      description: Include a repeatable example and relevant numbers, such as item condition and price, time for a capture, or distance and lighting for enemy detection. Describe how long you tested.
+    validations:
+      required: true
+  - type: textarea
+    id: desired
+    attributes:
+      label: What would feel better?
+      description: Explain the intended experience and a suggested adjustment, if you have one.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Minimal redacted evidence (optional)
+      description: Short notes, a small error excerpt, or a cropped screenshot only. No full saves or raw logs.

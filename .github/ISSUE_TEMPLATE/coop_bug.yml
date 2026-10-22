@@ -1,0 +1,82 @@
+name: Experimental co-op connection or sync problem
+description: Report host/client connection failures, desync, or co-op gameplay problems.
+title: "[Experimental co-op]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Co-op is **experimental**. The launcher is a host/join front end for the separately obtained co-op engine. The host's running game owns the world; this is **not a standalone SPT-style server**. Two-PC gameplay and long campaigns are not established as validated by this project.
+        Reports here are public. **Do not post any IP addresses (including Tailscale addresses), invites, device identifiers, credentials, authentication keys, full saves, or raw logs.** Remove Windows usernames and personal paths from excerpts and screenshots.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked my report and attachments for the private information listed above.
+          required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: Which side are you reporting from?
+      options:
+        - Host
+        - Joining client
+        - Both / coordinated report
+    validations:
+      required: true
+  - type: textarea
+    id: versions
+    attributes:
+      label: Host and client builds
+      description: For each side, list repository tag/commit, GAMMA, Anomaly, engine/co-op version, and profile name. Write unknown if a version is unavailable. Do not include device names or paths.
+      placeholder: |
+        Host: repository / GAMMA / Anomaly / engine-co-op / profile
+        Client: repository / GAMMA / Anomaly / engine-co-op / profile
+    validations:
+      required: true
+  - type: dropdown
+    id: fingerprint
+    attributes:
+      label: Do the host and client content fingerprints match?
+      description: A matching preflight fingerprint does not prove complete asset parity or successful gameplay. The engine's own compatibility check must remain enabled.
+      options:
+        - Yes - compared on both PCs
+        - No - fingerprints differ
+        - Not checked / unavailable
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: When does the problem appear?
+      options:
+        - Launcher checks or backup
+        - Launching the game / main menu
+        - Connecting to a loaded host world
+        - Players or NPCs / combat
+        - Items / trading / looting
+        - Warfare movement or capture
+        - Map transition
+        - Save / reconnect
+        - Another stage
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps and what each player sees
+      description: Give the map, actions, expected result, and actual result on host and client. Say whether both PCs were tested and how often it repeats. For connection issues, give only the route-check result and whether Steam was fully exited; never include addresses.
+      placeholder: |
+        Steps:
+        Expected:
+        Host sees:
+        Client sees:
+        Repeats / number of PCs tested:
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Minimal redacted error excerpt (optional)
+      description: Label excerpts host or client. A few relevant lines are enough. No raw logs, saves, IP addresses, invites, authentication keys, or personal paths.
+      render: text

@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest a focused improvement or testing tool.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the player or tester problem first. Co-op is experimental, and the launcher does not provide a standalone SPT-style world server. A request does not establish engine support or redistribution permission for an addon.
+        This report is public. **Do not include IP addresses (including Tailscale addresses), credentials, authentication keys, full saves, or raw logs.** Redact usernames and personal paths from any examples.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked my report and attachments for the private information listed above.
+          required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Where would this help?
+      options:
+        - Solo gameplay
+        - Experimental co-op host / join
+        - Both modes
+        - Documentation / testing tools
+    validations:
+      required: true
+  - type: input
+    id: build
+    attributes:
+      label: Current build or profile (optional)
+      description: Repository tag/commit and profile, if you already use this project. For a co-op-specific request, mention host or client.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe a concrete situation and the result you want.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Proposed change
+      description: Describe the improvement and any simpler alternatives. For an existing addon, link its official author page and license if known; do not attach its files.
+    validations:
+      required: true
+  - type: textarea
+    id: test
+    attributes:
+      label: How could we test that it helps? (optional)
+      description: A short example or success criterion is enough. No private data or raw logs.
