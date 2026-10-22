@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "solo-clearsky-warfare-testing",
+  "type": "design-and-testing-reference",
+  "auto_applied": false,
+  "campaign": {"faction": "csky", "all_out_war": true, "dynamic_faction_relations": false},
+  "carry": {"normal_base_kg": 50, "multiplier": 1.5, "base_result_kg": 75, "keep_normal_gear_and_skill_bonuses": true},
+  "warfare_targets": {"expansion_aggression": 10, "offensive_targets_per_base": 1, "assault_staging_game_minutes": [60, 100], "base_occupation_game_minutes": 90, "resource_occupation_game_minutes": 60, "territory_occupation_game_minutes": 30, "keep_last_base": false},
+  "economy_targets": {"hub": "Clear Sky Spore", "gun_trading": true, "normal_restock": true, "forced_inventory_resets": false, "barter": true},
+  "zombies": {"new_warfare_mutant_squad_replacement_chance": 0.35, "squad_size": [4, 6], "armed_zombified_faction_preserved": true},
+  "limitations": ["Reference values are not an importable axr_options file.", "Long-Warfare capture logic, full hub, barter, medical and loot-search implementations are not supplied by this repository.", "Public-install gameplay and long-campaign balance remain unverified."]
+}

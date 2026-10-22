@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "experimental-xrrazom-coop-testing",
+  "experimental": true,
+  "architecture": "host-game-authoritative-world",
+  "network": "private-tailscale-direct-ip",
+  "engine_dependency": "xrRazom 1.4 Slim - independently acquired matching copy",
+  "default_port": 27015,
+  "recommended_first_test_players": 2,
+  "requirements": ["Separate co-op installation and saves", "Stable unique player names", "Matching effective mods and co-op engine", "Keep upstream compatibility check enabled", "Host saves the authoritative world", "No public sharing of endpoints, account information or raw logs"],
+  "auto_install_engine": false,
+  "auto_change_firewall_or_tailnet": false,
+  "two_pc_gameplay_verified": false,
+  "solo_addon_parity_verified": false,
+  "alifetactics_compatible_verified": false,
+  "test_plan": "docs/COOP-TESTING.md"
+}
