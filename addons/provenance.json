@@ -64,6 +64,15 @@
       "copied_from_existing_solo_test_build": true,
       "coop_verified": false,
       "new_gameplay_test_run_for_publication": false
+    },
+    {
+      "path": "loot-transfer-guard/gamedata/scripts/zzzzz_local_loot_transfer_guard.script",
+      "sha256": "e2f65f12b1c761620ca0df9e30ce92d36281917e5819f0287cf80d35d4fd4252",
+      "bytes": 805,
+      "origin": "Independent original UIInventory.Action_Move API wrapper; calls REDUX hidden-item predicate without copying upstream implementation",
+      "copied_from_existing_solo_test_build": true,
+      "coop_verified": false,
+      "new_gameplay_test_run_for_publication": false
     }
   ],
   "publication_check": {
@@ -76,7 +85,7 @@
     "a_wpo_parts.script",
     "western_goods_loot.script",
     "BHSRO adaptations",
-    "Looting Takes Time REDUX adaptations",
+    "Looting Takes Time REDUX upstream source and assets; original transfer guard separately included",
     "anomaly-barter framework"
   ],
   "limitations": "Native script/unit evidence is documented per addon; no gameplay or co-op validation is claimed."

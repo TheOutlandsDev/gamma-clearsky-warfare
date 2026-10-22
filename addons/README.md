@@ -10,6 +10,7 @@ Use a backed-up **copy** of your installation and saves for testing. Create a se
 | `practical-starters` | Add 12 selectable guns and increase matching starting ammunition. | Item references, all 13 faction loadouts, and native ammo grants for 52 weapon entries checked; new-campaign gameplay still needs testing. |
 | `clearsky-allegiance` | Default the new-game menu to Clear Sky/Warfare and lock true Clear Sky membership in that campaign type. | Native-provider tests with engine mocks passed; menu and transition gameplay need testing. |
 | `warfare-unarmed-zombies` | Replace 35% of new ambient Warfare mutant squad selections with groups of 4-6 unarmed zombie creatures. | Seeded 20,000-selection test passed; encounter pacing needs gameplay testing. |
+| [`loot-transfer-guard`](loot-transfer-guard/README.md) | Block Take All/stack transfers of unrevealed corpse items through the installed REDUX predicate. | Independent wrapper; separately acquired REDUX and GAMMA inventory APIs required. Compile-only check passed; public gameplay/co-op unverified. |
 
 These checks are not end-to-end engine or multiplayer validation. A previous combined single-player build loaded an existing save and opened Spore's trade window, according to the tester; that does not verify every addon listed here.
 
