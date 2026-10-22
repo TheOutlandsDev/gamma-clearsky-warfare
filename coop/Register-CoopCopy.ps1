@@ -7,11 +7,15 @@ param(
     [Parameter(Mandatory=$true)][string]$Profile,
     [Parameter(Mandatory=$true)][string]$XrRazomMod,
     [Parameter(Mandatory=$true)][string]$EngineManifest,
-    [string]$LauncherAssembly = (Join-Path $PSScriptRoot 'out\GAMMA Private Co-op.exe'),
+    [string]$LauncherAssembly,
     [switch]$AcknowledgeExperimental
 )
 $ErrorActionPreference = 'Stop'
 if (-not $AcknowledgeExperimental) { throw 'Read coop/README.md, then pass -AcknowledgeExperimental for a separately prepared test copy.' }
+# Windows PowerShell 5.1 initializes PSScriptRoot after parameter defaults.
+if (-not $PSBoundParameters.ContainsKey('LauncherAssembly')) {
+    $LauncherAssembly = Join-Path -Path $PSScriptRoot -ChildPath 'out\GAMMA Private Co-op.exe'
+}
 Add-Type -AssemblyName System.Web.Extensions
 [Reflection.Assembly]::LoadFrom([IO.Path]::GetFullPath($LauncherAssembly)) | Out-Null
 $taskRoot = [GammaCoop.Core]::Canonical($GameRoot)

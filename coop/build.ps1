@@ -1,6 +1,10 @@
 [CmdletBinding()]
-param([string]$OutputDirectory = (Join-Path $PSScriptRoot 'out'), [switch]$SelfTest)
+param([string]$OutputDirectory, [switch]$SelfTest)
 $ErrorActionPreference = 'Stop'
+# Resolve script-relative defaults after Windows PowerShell 5.1 binds parameters.
+if (-not $PSBoundParameters.ContainsKey('OutputDirectory')) {
+    $OutputDirectory = Join-Path -Path $PSScriptRoot -ChildPath 'out'
+}
 $taskCompiler = Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'
 if (-not (Test-Path -LiteralPath $taskCompiler -PathType Leaf)) { throw 'Windows .NET Framework 4.x C# compiler is required.' }
 $taskOutput = [IO.Path]::GetFullPath($OutputDirectory)
