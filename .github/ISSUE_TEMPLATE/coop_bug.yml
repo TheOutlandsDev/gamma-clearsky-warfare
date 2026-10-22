@@ -40,9 +40,9 @@ body:
       label: Do the host and client content fingerprints match?
       description: A matching preflight fingerprint does not prove complete asset parity or successful gameplay. The engine's own compatibility check must remain enabled.
       options:
+        - Not checked / unavailable
         - Yes - compared on both PCs
         - No - fingerprints differ
-        - Not checked / unavailable
     validations:
       required: true
   - type: dropdown
