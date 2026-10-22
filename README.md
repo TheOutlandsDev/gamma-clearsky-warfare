@@ -2,7 +2,7 @@
 
 An unofficial, source-first companion for a slower Clear Sky Warfare campaign in S.T.A.L.K.E.R. GAMMA, with original optional addons, an experimental xrRazom host/join launcher, and structured playtest feedback.
 
-**First public testing build. Two-PC co-op has not been validated.** This repository supplies source and instructions; players obtain GAMMA, xrRazom, and other dependencies from their authors. It does not install the complete customized solo campaign.
+**Testing source only. The private full mod stack currently crashes during new-game creation; stability is unresolved. Two-PC co-op has not been validated.** This repository supplies source and instructions; players obtain GAMMA, xrRazom, and other dependencies from their authors. It does not install the complete customized solo campaign. See the [startup investigation](docs/STARTUP-INVESTIGATION.md) before attempting a fresh campaign.
 
 ## Choose a testing track
 

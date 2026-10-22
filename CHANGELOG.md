@@ -1,3 +1,10 @@
+# Mod-stack investigation update - 2026-10-22
+
+- Flag the unresolved fresh-campaign startup exit in the private full stack and separate it from the earlier successful save-load observation.
+- Document effective-file and runtime-hook audits, two privately applied integration corrections, offline regressions and an untested comparison profile.
+- Fix Windows PowerShell 5.1 default-path resolution in the original co-op build and registration helpers; explicit path overrides remain supported.
+- Keep upstream adapted implementations, full logs, dumps, saves and private endpoints outside the public repository. No new gameplay or two-PC validation is claimed.
+
 # Dependency and setup documentation update - 2026-10-22
 
 - Document author sources, versions, relative install paths, integration behavior and unresolved publishing permissions.
