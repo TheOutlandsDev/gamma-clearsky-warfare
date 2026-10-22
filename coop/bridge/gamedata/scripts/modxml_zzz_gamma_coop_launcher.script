@@ -1,0 +1,81 @@
+-- Custom launcher adapter. Per-session requests live in appdata, outside the
+-- synchronized mod/config content. This file must be identical on both PCs.
+local consumed = false
+local registered = false
+
+local function read_request()
+    if consumed then return nil end
+    consumed = true
+    local fs = getFS()
+    local path = fs:update_path("$app_data_root$", "gamma_coop_request.txt")
+    local stream = io.open(path, "r")
+    if not stream then return nil end
+    local request = {}
+    local valid_keys = {role=true, host=true, port=true, expires=true}
+    local invalid, lines = false, 0
+    for line in stream:lines() do
+        lines = lines + 1
+        local key, value = line:match("^([a-z]+)=(.-)%s*$")
+        if lines > 8 or #line > 256 or not key or not valid_keys[key] or request[key] ~= nil then
+            invalid = true
+        else
+            request[key] = value
+        end
+    end
+    stream:close()
+    -- One launch, one attempt. Never auto-connect when a later manual launch
+    -- encounters an old file, including after an engine crash.
+    -- X-Ray deliberately omits os.remove; use its exposed filesystem API.
+    local cleared, clear_result = pcall(fs.file_delete, fs, "$app_data_root$", "gamma_coop_request.txt")
+    if not cleared or clear_result == false then
+        printf("![GAMMA Co-op Launcher] Cannot consume launch request")
+        return nil
+    end
+    if invalid then return nil end
+    local expires = tonumber(request.expires)
+    if not tostring(request.expires):match("^%d+$") or not expires or expires < os.time() or expires > os.time() + 600 then
+        printf("![GAMMA Co-op Launcher] Ignored an expired/invalid launch request")
+        return nil
+    end
+    if request.role ~= "host" and request.role ~= "join" then return nil end
+    return request
+end
+
+function on_main_menu_init(menu)
+    local request = read_request()
+    if not request then return end
+    if request.role == "host" then
+        printf("[GAMMA Co-op Launcher] Host ready: load a save to start the session")
+        return
+    end
+    if level.present() then return end
+    local a, b, c, d = tostring(request.host):match("^(%d+)%.(%d+)%.(%d+)%.(%d+)$")
+    a, b, c, d = tonumber(a), tonumber(b), tonumber(c), tonumber(d)
+    local port = tonumber(request.port)
+    if a ~= 100 or not b or b < 64 or b > 127 or not c or c > 255 or not d or d > 255
+        or not tostring(request.port):match("^%d+$") or not port or port % 1 ~= 0 or port < 1024 or port > 65535 then
+        printf("![GAMMA Co-op Launcher] Invalid private-VPN endpoint")
+        return
+    end
+    local net = XrrNet and XrrNet()
+    if not net or not net.Connect then
+        printf("![GAMMA Co-op Launcher] xrRazom networking is unavailable")
+        return
+    end
+    local address = string.format("%d.%d.%d.%d/port=%d", a, b, c, d, port)
+    printf("[GAMMA Co-op Launcher] Attempting private-VPN connection")
+    local ok = pcall(net.Connect, net, address)
+    if not ok then
+        local message = "Private-VPN connection failed. Check setup locally before sharing redacted diagnostics."
+        printf("![GAMMA Co-op Launcher] Connection attempt failed")
+        if net.SetPendingError then net:SetPendingError(message) end
+    end
+end
+
+-- dxml_core loads modxml_*.script before the first main menu. on_game_start
+-- runs only after a world loads, which is too late for automatic joining.
+function on_xml_read()
+    if registered or not get_console_cmd(0, "xrr_player_name") then return end
+    registered = true
+    RegisterScriptCallback("main_menu_on_init", on_main_menu_init)
+end
