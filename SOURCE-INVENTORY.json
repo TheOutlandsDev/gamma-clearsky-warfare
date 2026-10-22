@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "publication_date": "2026-10-22",
+  "license_scope": "COPYRIGHT.md",
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/balance_feedback.yml",
+      "bytes": 2674,
+      "sha256": "7cc096ce2269e221fbefa042c48580dbdaf8966a50d0d1b4826c9b0865713df8"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "bytes": 28,
+      "sha256": "1f103c6a9dd07cd13a9a6f17ace6b813f47747eb9cb7e00488cb2073caaf91bb"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/coop_bug.yml",
+      "bytes": 3440,
+      "sha256": "35aa76446ed23ac90e75780d02b349b2b2dadb1fddf2353a8a744bc80673cd92"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "bytes": 2026,
+      "sha256": "6a670f52a21872e91546b28e2209abacec6478d59d3c1bacf7d517d98ed61598"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/solo_bug.yml",
+      "bytes": 2350,
+      "sha256": "caa4a1cb558da01ab0437925b37cafa8d210a6c3d6a97774c3af59c57eb646d0"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 502,
+      "sha256": "5bc2f7bf7c9ac1cd91eedc23b1aa1bd4a0b56841c8ed51a033cb25e6fe515d97"
+    },
+    {
+      "path": "addons/carry-weight-1.5x/gamedata/scripts/zzz_local_carry_15x.script",
+      "bytes": 1206,
+      "sha256": "d9bda29695db50186975a2539a87b4a0ad3efc01793506abf2ce7b6bdde917b2"
+    },
+    {
+      "path": "addons/carry-weight-1.5x/README.md",
+      "bytes": 2125,
+      "sha256": "5a0e5e7577d9776e1236e12335fedd871e6c9e7fd3caed187bef1729d41debab"
+    },
+    {
+      "path": "addons/clearsky-allegiance/gamedata/scripts/modxml_local_clearsky_campaign.script",
+      "bytes": 403,
+      "sha256": "ee309a29c1ca01f5a61b56d5c0f2715ac83406d8cf86fb8255865e25dc8d780f"
+    },
+    {
+      "path": "addons/clearsky-allegiance/gamedata/scripts/zzzz_local_clearsky_allegiance.script",
+      "bytes": 4040,
+      "sha256": "74f9263490028b584373f33398622daa958e6c43041e06c71def83412788b39d"
+    },
+    {
+      "path": "addons/clearsky-allegiance/README.md",
+      "bytes": 2377,
+      "sha256": "86bd987addce3506a4ad9904dbee83d6b7064c7d5c298d30685ddc8fccb89329"
+    },
+    {
+      "path": "addons/practical-starters/gamedata/configs/items/settings/mod_new_game_loadouts_zzzz_local_practical.ltx",
+      "bytes": 422,
+      "sha256": "5c74c86296c2f6afa75a4e7d2de151ed5cca0e5dbc23f4958e3145765dea0fea"
+    },
+    {
+      "path": "addons/practical-starters/gamedata/configs/items/settings/mod_new_game_loadouts_zzzzzz_local_ammunition.ltx",
+      "bytes": 448,
+      "sha256": "4190f94ad628c3b87bbd2452c62a07c73ca43dc3a844e986fee9587c605514de"
+    },
+    {
+      "path": "addons/practical-starters/README.md",
+      "bytes": 2183,
+      "sha256": "a9348cf4530b5882f2d6da022eeab6d770fd24e3099bafb247150f8f0973558b"
+    },
+    {
+      "path": "addons/provenance.json",
+      "bytes": 3854,
+      "sha256": "365d03bd5399aa3c0e6a98eaa1cb6cec5be8f920dbd1f6d43bb8180cffc3cc15"
+    },
+    {
+      "path": "addons/README.md",
+      "bytes": 2453,
+      "sha256": "2732b6e35a6d9a62a0115cf69eb08a16a2c2274e961a6a69be7a211934e5542f"
+    },
+    {
+      "path": "addons/warfare-unarmed-zombies/gamedata/configs/mod_system_zz_local_warfare_unarmed_zombies.ltx",
+      "bytes": 301,
+      "sha256": "b4a8d8b26449e9dec4856aa2b44b5cb4bcd25265112e4efdc87ed3a49d6b9729"
+    },
+    {
+      "path": "addons/warfare-unarmed-zombies/gamedata/scripts/zzz_local_warfare_unarmed_zombies.script",
+      "bytes": 602,
+      "sha256": "0b947c2310c0daf3e3dcf653e577bc110a05ed7a5b26ddbd7f6592a5c7e34847"
+    },
+    {
+      "path": "addons/warfare-unarmed-zombies/README.md",
+      "bytes": 2270,
+      "sha256": "684fe72208542e61265b2c7a3687f17043d72a971eaa2c79306449c341c47c74"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 512,
+      "sha256": "e9d598df941c55464dc786fc41963d4f3ca9babb13b950ec2a5ba94be51c5197"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1917,
+      "sha256": "22c87d1d4500c0abecd5f9e95a8771b6fb43431a0a1199bf9eb9d35a76c22e82"
+    },
+    {
+      "path": "coop/bridge/gamedata/scripts/modxml_zzz_gamma_coop_launcher.script",
+      "bytes": 3587,
+      "sha256": "b8ed4a6f49a4a7f581931d1b956f9caece6a10a41977178ca9fc14952f4a52c3"
+    },
+    {
+      "path": "coop/build.ps1",
+      "bytes": 1369,
+      "sha256": "7cb8169f1b5622118a141559c804d0d55d0d93979362db4eb44ce59a02e668e8"
+    },
+    {
+      "path": "coop/engine-manifest.example.json",
+      "bytes": 450,
+      "sha256": "4c6189cd067448de15c35a6a61e91ff3933dda7f105bb9f137475e63db11fc07"
+    },
+    {
+      "path": "coop/GammaCoopLauncher.cs",
+      "bytes": 43283,
+      "sha256": "174bbb0cf85ccf70b232a27a4a0f3cb40c7e23e258c4b597874b5a76e0ac3de0"
+    },
+    {
+      "path": "coop/PROVENANCE.md",
+      "bytes": 3161,
+      "sha256": "7d36487cecad25aafec348fad5c4ad168422d8ab891e63053b17eeb6a885b059"
+    },
+    {
+      "path": "coop/README.md",
+      "bytes": 8302,
+      "sha256": "f0ce709550c4d6ff52e8abce75f45f1b43b6cc41de59ca9230484037d4635a11"
+    },
+    {
+      "path": "coop/Register-CoopCopy.ps1",
+      "bytes": 3591,
+      "sha256": "de216c6e987f13dc1d2d1a43ec54c1038e69025a226339cc39b41f79daf3870a"
+    },
+    {
+      "path": "coop/tests/test_bridge.py",
+      "bytes": 3634,
+      "sha256": "a67f8117e30e963f5faf95ab563e7775fcec16311b5ec99f4a264097ea8ad622"
+    },
+    {
+      "path": "coop/VERIFICATION.md",
+      "bytes": 2208,
+      "sha256": "32962ac5692ad12ae7720dcd984e748303d484aa00d1e1e4d83db6688f74af6c"
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "bytes": 1021,
+      "sha256": "d9e51c2f232ade44039e8c2043f993f88bd9a243dae52a4dbef3ca29d551c99e"
+    },
+    {
+      "path": "docs/ALIFETACTICS.md",
+      "bytes": 3120,
+      "sha256": "15642957264c8844d61f91783a234ec73f10a07412891ffd90bad2e3fd01a605"
+    },
+    {
+      "path": "docs/COOP-TESTING.md",
+      "bytes": 2469,
+      "sha256": "36e9be4ee049b9a84458ba57ad7f89e82c8ead9dfd75e2d4a335b436fda69dce"
+    },
+    {
+      "path": "docs/INSTALL.md",
+      "bytes": 2741,
+      "sha256": "882fd220aff635fa8cd83c090d51aa137eededb0cac8e306fad02f169d6d06ea"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "bytes": 2804,
+      "sha256": "d40d149c6a2683593fd4d45c47bc21bb94e2e0a2be95092a2549b7dcd2f1dba7"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 35184,
+      "sha256": "6f1e622c82a380075843bb084a7ec3b1f1d12a4a02526d75e78b0924a860aa75"
+    },
+    {
+      "path": "presets/coop-testing.json",
+      "bytes": 857,
+      "sha256": "00f2409dc4c0a744445565835487ee2abed69ea7735f0a982f4304a6a07279df"
+    },
+    {
+      "path": "presets/solo-testing.json",
+      "bytes": 1169,
+      "sha256": "ce7395355a2b4fbcd1135d3d14d3cf7f47d8202a4162168ad5a21e3fe8eb0692"
+    },
+    {
+      "path": "PUBLICATION.md",
+      "bytes": 1641,
+      "sha256": "8052c33626431fc6504ee0c02267c727e7c89b61792d6672a5f57e781d2a1951"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4207,
+      "sha256": "3342bef354ec86ebdc9cfeb4c8f6eb29150f4c0972662ca632584b823587f63d"
+    },
+    {
+      "path": "THIRD-PARTY.md",
+      "bytes": 4178,
+      "sha256": "ff380dd16d74dcd4a9c8fd4e6e20963b750a5675aab966b9e6e3d849cd31bb1d"
+    },
+    {
+      "path": "tools/verify_publication.py",
+      "bytes": 4177,
+      "sha256": "6a6b0b6cb5fa46aea3c614622aebf5a4959a9af8ba2dd16f2315220f1a198c2f"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+# Game content and generated/private files never belong in this source repo.
+Anomaly/
+GAMMA/
+Co-op Warfare/
+Co-op Distribution/
+diagnostics/
+Save Backups/
+appdata/
+logs/
+__pycache__/
+.pytest_cache/
+.venv/
+bin/
+obj/
+coop/out/
+Launcher Data/
+self-test-results.txt
+*.tmp
+*.exe
+*.dll
+*.pdb
+*.zip
+*.7z
+*.rar
+*.db[0-9]
+*.scop
+*.dds
+*.ogf
+*.ogg
+*.sav
+*.scoc
+*.log
+*.mdmp
+*.dmp
+*.pyc
+launcher-settings.json
+coop-install.json
+tailscale-status.json
+test-results.local.json
+*.local.json
+.env
+.env.*
+!.env.example
