@@ -1,0 +1,32 @@
+-- Testing baseline: vanilla 50 kg * 1.5 = 75 kg before normal gear/skill bonuses.
+-- Replace the previous unlimited mod; never change item masses or gear bonuses.
+local key = "connor_carry_15x"
+local function apply_multiplier()
+    if not db.actor then return end
+    weight.remove_weight("connor_unlimited_carry")
+    weight.multiply_weight(key, 1.5, true)
+end
+
+local function reset_baseline()
+    if not db.actor then return end
+    -- Also reset a saved custom base slider to the normal 50 kg baseline.
+    if game_difficulties.get_game_factor("weight") ~= 50 then
+        game_difficulties.set_game_factor("weight", 50)
+    end
+end
+
+local function first_update()
+    if not db.actor then return end
+    -- Let native first-update callbacks refresh their cached base before
+    -- applying the multiplier, regardless of callback registration order.
+    CreateTimeEvent("local_carry_15x", "apply_after_init", 0, function()
+        apply_multiplier()
+        return true
+    end)
+end
+
+function on_game_start()
+    RegisterScriptCallback("on_game_load", reset_baseline)
+    RegisterScriptCallback("actor_on_first_update", first_update)
+    RegisterScriptCallback("on_option_change", apply_multiplier)
+end
