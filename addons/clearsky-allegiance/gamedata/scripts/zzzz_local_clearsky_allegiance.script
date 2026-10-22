@@ -1,0 +1,118 @@
+-- Solo Clear Sky Warfare campaign: keep true membership and equipped identity.
+-- Other factions and non-Warfare campaigns retain their native behavior.
+-- No global relationship/goodwill writes and no conversion of unrelated saves.
+local locked = false
+local campaign_ready = false
+local wrappers_installed = false
+local menu_installed = false
+
+function is_locked()
+    if not campaign_ready or not db.actor or not IsWarfare() then return false end
+    local stored_faction = alife_storage_manager.get_state().default_faction
+    if not locked and (stored_faction or gameplay_disguise.get_default_comm()) == "csky" then
+        locked = true
+    end
+    return locked
+end
+
+local function refresh()
+    if is_locked() then
+        -- Native toggle restores a saved disguise to its existing true faction.
+        gameplay_disguise.toggle_feature(false)
+    end
+end
+
+function install_menu_default()
+    if menu_installed then return end
+    local menu = ui_mm_faction_select.UINewGame
+    local load_faction = menu.LoadFaction
+    menu.LoadFaction = function(self, randomize, faction)
+        local use_default = not randomize and not faction
+        if use_default then faction = "csky" end
+        local result = load_faction(self, randomize, faction)
+        if use_default and not self._local_csky_default_applied then
+            self._local_csky_default_applied = true
+            if self.ck_warfare then
+                self.ck_warfare:SetCheck(true)
+                self.ck_states.ck_warfare = true
+                self:OnCheckSetWarfare()
+            end
+        end
+        return result
+    end
+    menu_installed = true
+end
+
+local function install_wrappers()
+    if wrappers_installed then return end
+    local set_true = _G.set_actor_true_community
+    _G.set_actor_true_community = function(faction, now)
+        if is_locked() and faction ~= "csky" then return false end
+        return set_true(faction, now)
+    end
+
+    local update_default = gameplay_disguise.update_default
+    gameplay_disguise.update_default = function(faction, now)
+        if is_locked() and faction ~= "csky" then return false end
+        return update_default(faction, now)
+    end
+
+    local set_comm = gameplay_disguise.set_comm
+    gameplay_disguise.set_comm = function(faction)
+        if is_locked() and faction ~= "csky" then return false end
+        return set_comm(faction)
+    end
+
+    local toggle = gameplay_disguise.toggle_feature
+    gameplay_disguise.toggle_feature = function(value)
+        if is_locked() then value = false end
+        return toggle(value)
+    end
+
+    local settings = gameplay_disguise.update_settings
+    gameplay_disguise.update_settings = function(...)
+        local result = settings(...)
+        refresh()
+        return result
+    end
+
+    local can_change = dialogs.drx_sl_actor_can_change_this_faction
+    dialogs.drx_sl_actor_can_change_this_faction = function(...)
+        if is_locked() then return false end
+        return can_change(...)
+    end
+
+    local change = xr_effects.drx_sl_change_factions
+    xr_effects.drx_sl_change_factions = function(actor, npc, parameters)
+        if is_locked() and parameters and parameters[1] ~= "csky" then
+            return false
+        end
+        return change(actor, npc, parameters)
+    end
+
+    local set_board_community = sim_board.simulation_board.set_actor_community
+    sim_board.simulation_board.set_actor_community = function(self, faction)
+        if is_locked() and faction ~= "csky" then return false end
+        return set_board_community(self, faction)
+    end
+    wrappers_installed = true
+end
+
+local function reset_loaded_campaign()
+    locked = false
+    campaign_ready = false
+end
+
+local function first_update()
+    campaign_ready = true
+    refresh()
+end
+
+function on_game_start()
+    locked = false
+    campaign_ready = false
+    install_wrappers()
+    RegisterScriptCallback("load_state", reset_loaded_campaign)
+    RegisterScriptCallback("actor_on_first_update", first_update)
+    RegisterScriptCallback("on_option_change", refresh)
+end

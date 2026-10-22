@@ -1,0 +1,9 @@
+-- DXML is available before entering the first new-game screen, unlike world
+-- on_game_start callbacks. Hook the existing UI method; do not replace its file.
+function on_xml_read()
+    RegisterScriptCallback("on_xml_read", function(filename)
+        if filename:lower():match("ui_mm_faction_select%.xml$") then
+            zzzz_local_clearsky_allegiance.install_menu_default()
+        end
+    end)
+end
