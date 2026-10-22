@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "audit_date": "2026-10-22",
+  "files": [
+    {
+      "path": "carry-weight-1.5x/gamedata/scripts/zzz_local_carry_15x.script",
+      "sha256": "d9bda29695db50186975a2539a87b4a0ad3efc01793506abf2ce7b6bdde917b2",
+      "bytes": 1206,
+      "origin": "New original project API wrapper or DLTX entries; no full upstream source file included",
+      "copied_from_existing_solo_test_build": true,
+      "coop_verified": false,
+      "new_gameplay_test_run_for_publication": false
+    },
+    {
+      "path": "practical-starters/gamedata/configs/items/settings/mod_new_game_loadouts_zzzz_local_practical.ltx",
+      "sha256": "5c74c86296c2f6afa75a4e7d2de151ed5cca0e5dbc23f4958e3145765dea0fea",
+      "bytes": 422,
+      "origin": "New original project API wrapper or DLTX entries; no full upstream source file included",
+      "copied_from_existing_solo_test_build": true,
+      "coop_verified": false,
+      "new_gameplay_test_run_for_publication": false
+    },
+    {
+      "path": "practical-starters/gamedata/configs/items/settings/mod_new_game_loadouts_zzzzzz_local_ammunition.ltx",
+      "sha256": "4190f94ad628c3b87bbd2452c62a07c73ca43dc3a844e986fee9587c605514de",
+      "bytes": 448,
+      "origin": "New original project API wrapper or DLTX entries; no full upstream source file included",
+      "copied_from_existing_solo_test_build": true,
+      "coop_verified": false,
+      "new_gameplay_test_run_for_publication": false
+    },
+    {
+      "path": "clearsky-allegiance/gamedata/scripts/zzzz_local_clearsky_allegiance.script",
+      "sha256": "74f9263490028b584373f33398622daa958e6c43041e06c71def83412788b39d",
+      "bytes": 4040,
+      "origin": "New original project API wrapper or DLTX entries; no full upstream source file included",
+      "copied_from_existing_solo_test_build": true,
+      "coop_verified": false,
+      "new_gameplay_test_run_for_publication": false
+    },
+    {
+      "path": "clearsky-allegiance/gamedata/scripts/modxml_local_clearsky_campaign.script",
+      "sha256": "ee309a29c1ca01f5a61b56d5c0f2715ac83406d8cf86fb8255865e25dc8d780f",
+      "bytes": 403,
+      "origin": "New original project API wrapper or DLTX entries; no full upstream source file included",
+      "copied_from_existing_solo_test_build": true,
+      "coop_verified": false,
+      "new_gameplay_test_run_for_publication": false
+    },
+    {
+      "path": "warfare-unarmed-zombies/gamedata/scripts/zzz_local_warfare_unarmed_zombies.script",
+      "sha256": "0b947c2310c0daf3e3dcf653e577bc110a05ed7a5b26ddbd7f6592a5c7e34847",
+      "bytes": 602,
+      "origin": "New original project API wrapper or DLTX entries; no full upstream source file included",
+      "copied_from_existing_solo_test_build": true,
+      "coop_verified": false,
+      "new_gameplay_test_run_for_publication": false
+    },
+    {
+      "path": "warfare-unarmed-zombies/gamedata/configs/mod_system_zz_local_warfare_unarmed_zombies.ltx",
+      "sha256": "b4a8d8b26449e9dec4856aa2b44b5cb4bcd25265112e4efdc87ed3a49d6b9729",
+      "bytes": 301,
+      "origin": "New original project API wrapper or DLTX entries; no full upstream source file included",
+      "copied_from_existing_solo_test_build": true,
+      "coop_verified": false,
+      "new_gameplay_test_run_for_publication": false
+    }
+  ],
+  "publication_check": {
+    "source_bytes_match": true,
+    "lua_compile_only": true,
+    "private_absolute_paths_in_source": false
+  },
+  "excluded_upstream_overrides": [
+    "smart_terrain_warfare.script",
+    "a_wpo_parts.script",
+    "western_goods_loot.script",
+    "BHSRO adaptations",
+    "Looting Takes Time REDUX adaptations",
+    "anomaly-barter framework"
+  ],
+  "limitations": "Native script/unit evidence is documented per addon; no gameplay or co-op validation is claimed."
+}
