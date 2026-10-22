@@ -1,0 +1,15 @@
+-- Add unarmed walkers to Warfare's existing bounded mutant spawning.
+-- Existing armed factions and Story-mode spawning retain their original rules.
+local installed = false
+
+function on_game_start()
+    if installed then return end
+    local original = faction_expansions.get_section
+    faction_expansions.get_section = function(faction, advanced, veteran)
+        if faction == "monster" and IsWarfare() and math.random(100) <= 35 then
+            return "local_warfare_unarmed_zombies"
+        end
+        return original(faction, advanced, veteran)
+    end
+    installed = true
+end
