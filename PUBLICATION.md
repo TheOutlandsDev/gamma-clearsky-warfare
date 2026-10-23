@@ -34,3 +34,9 @@ This publication does not change the installed game, migrate saves, activate Ali
 - The exact expanded inventory, ammunition and repeated-reload count were not independently recorded. The new solo protocol is a procedure for future fixed comparisons, not a claim that test-02 used the minimal selection.
 - This update changes documentation and the source inventory only. No third-party repair implementation or diff, machine-specific logger, full log, save, dump or personal endpoint is added. No new permissions were granted and no author requests were sent.
 - Publication checks validate source inventory, privacy patterns and relative links. A public clean installation, longer campaign and real two-PC co-op remain unverified. Historical counts/results above retain their original revision scope.
+
+## Test-02 closed-session follow-up, 2026-10-23
+
+- The maintainer reports traders' new stock, economy changes and added items functioning during test-02. This is attributed player evidence; exact inventory, trader-by-trader transaction and wallet measurements were not captured.
+- The final manual save and session evidence were preserved and hash-verified. Both observer records report the game's natural exit as `0x00000000`. The logger's own return status is a separate result.
+- This follow-up changes documentation and source hashes only. It does not establish economy balance, later save/reload reliability, long-campaign stability, public installation reproducibility or multiplayer compatibility. Original permissions and private-evidence exclusions are unchanged.

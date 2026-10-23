@@ -110,8 +110,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 2496,
-      "sha256": "6ca6ef2e023cec70317004cd87ad201e0c3a7ab908f87ba9de841b2a5609bcca"
+      "bytes": 3106,
+      "sha256": "6e9f53afd8e9788f06d785c8daf6e213c65187cefaa7170ab4d70637d8882321"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -195,13 +195,13 @@
     },
     {
       "path": "docs/STARTUP-INVESTIGATION.md",
-      "bytes": 6214,
-      "sha256": "96dbace3c916dc5231708adfef7b679dd32e8f792b82fdcd222c9e256385f6a0"
+      "bytes": 6774,
+      "sha256": "ae2edd52f2a7b4a3d4bc064b68690715717dcd2218de4c6acb950799f88fb238"
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 4556,
-      "sha256": "af864e18d27e8ba435f350ec9df26d248aa4d778f241320078ef2c75e6753db7"
+      "bytes": 5153,
+      "sha256": "01f946f8be63232cc11dff9d91f194fe532f84638f012ab75206075e4877c3c1"
     },
     {
       "path": "LICENSE",
@@ -220,8 +220,8 @@
     },
     {
       "path": "PUBLICATION.md",
-      "bytes": 5887,
-      "sha256": "a62dbd9c3316f17f3f53e5930944c8d0930c3bfa01faafd535220953e76bfeb3"
+      "bytes": 6667,
+      "sha256": "17c23ebbf9e0bd58986a8859079afd4a3cf6d5a715379b1918965a4e01063889"
     },
     {
       "path": "README.md",

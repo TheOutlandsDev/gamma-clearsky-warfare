@@ -1,3 +1,9 @@
+# Test-02 gameplay report and clean exit - 2026-10-23
+
+- Record the maintainer's in-game report that trader stock, added goods and economy changes work in test-02, without claiming measured wallet/price balance or a recorded transaction matrix.
+- Independently confirm the observer recorded natural game exit `0x00000000`; distinguish this from logger success. Preserve and hash-verify the final manual save and closed-session evidence privately.
+- Keep long-campaign, public clean-install and two-PC co-op validation open. No game/mod files, third-party repair code or raw test evidence are published.
+
 # Private solo startup test update - 2026-10-23
 
 - Record successful private fresh-world starts without selected equipment (`test-01`) and with an expanded selection (`test-02`), supported by completed actor initialization and preserved save files. Exact expanded inventory, ammunition and repeated reloads remain unrecorded.
