@@ -9,7 +9,9 @@ Updated 2026-10-23. **Initial fresh-world tests now pass on the repaired private
 | `test-01`, no selected starting items | Maintainer reached the world; trace completed actor initialization; manual save triplet preserved and hash-verified | One startup observation |
 | `test-02`, expanded selected equipment | Maintainer reported a pass with substantially more items; a later actor-initialization completion and manual/autosave files were captured; game and MO2 were responding | Exact loadout, ammo and repeated reload count were not independently recorded |
 
-The planned small starter recipe was not the actual expanded test-02 loadout. Follow [the solo test protocol](SOLO-TESTING.md) to record a fixed selection and repeat reloads. A previous Spore trade-window observation still does not establish successful purchases, sales or economy balance.
+After the startup check, the maintainer reports test-02's traders, new goods and economy changes functioning in game. A final manual save was written, then the game closed normally. The observer's session and native-exit records agree on `0x00000000` and a natural exit; this is the actual game result, not merely the logger's return code. The final save and closed-session evidence were copied and hash-verified privately. Exact transaction/wallet measurements and the number of reloads remain unrecorded.
+
+The planned small starter recipe was not the actual expanded test-02 loadout. Follow [the solo test protocol](SOLO-TESTING.md) to record a fixed selection and repeat reloads. The broader test-02 report advances the earlier trade-window-only observation; quantified buying/selling and economy balance still need recorded transaction trials.
 
 ## Installation and failure evidence
 
