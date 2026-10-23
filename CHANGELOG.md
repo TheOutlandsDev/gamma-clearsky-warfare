@@ -1,3 +1,10 @@
+# Confirmed test-02 baseline before Warfare pacing - 2026-10-23
+
+- Record player-confirmed passes: two reloads retain items/progress, packed bolts unpack/work, buying and selling guns update money/inventory correctly, traders/new items/economy function and medical treatment already works.
+- Preserve the final manual test-02 save triplet in a separate private backup; hashes match the clean-exit snapshot. Keep profile/settings context and engine/repair hashes privately alongside it.
+- Publish a consolidated evidence matrix and instructions to branch the next manual pacing trial as warfare-pace-01 without overwriting test-02. No pacing trial, runtime/config change or game launch is performed by this update.
+- Retain the normal native game exit 0x00000000 as captured evidence. Public clean installation, quantitative balance, longer campaign stability and two-PC co-op remain separate gates. Historical entries below reflect what was known at those earlier updates.
+
 # Test-02 gameplay report and clean exit - 2026-10-23
 
 - Record the maintainer's in-game report that trader stock, added goods and economy changes work in test-02, without claiming measured wallet/price balance or a recorded transaction matrix.

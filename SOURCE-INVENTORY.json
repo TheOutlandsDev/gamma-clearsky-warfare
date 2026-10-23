@@ -110,8 +110,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 3106,
-      "sha256": "6e9f53afd8e9788f06d785c8daf6e213c65187cefaa7170ab4d70637d8882321"
+      "bytes": 4087,
+      "sha256": "46ab542daac3499db0fbc28a2023b440904b1052b88349e297fe56faa28d30a6"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -190,18 +190,23 @@
     },
     {
       "path": "docs/SOLO-TESTING.md",
-      "bytes": 3543,
-      "sha256": "3b916379495a2a1c1fe9462fd5ce89470308e24cf480c2daa6c5b8e8e9682b2f"
+      "bytes": 4226,
+      "sha256": "1ffc06f2ae0bda178f5df657d68b7e99aab25413039f21c644baa6a2b02aeaa6"
     },
     {
       "path": "docs/STARTUP-INVESTIGATION.md",
-      "bytes": 6774,
-      "sha256": "ae2edd52f2a7b4a3d4bc064b68690715717dcd2218de4c6acb950799f88fb238"
+      "bytes": 6592,
+      "sha256": "50165bff522fe3c47ecca49aa20d81772141c738966841d4e3c331e557c89b81"
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 5153,
-      "sha256": "01f946f8be63232cc11dff9d91f194fe532f84638f012ab75206075e4877c3c1"
+      "bytes": 4990,
+      "sha256": "8cc6e51a6663eb6d172f38eeedef27a2ef1d0cc6d0f5c862611f235d000dcfc8"
+    },
+    {
+      "path": "docs/TEST02-BASELINE.md",
+      "bytes": 3234,
+      "sha256": "e7619a49fc6ab8ba8e398e5b5116deeeee75b14cbd896ccb32216ef645109e85"
     },
     {
       "path": "LICENSE",
@@ -220,13 +225,13 @@
     },
     {
       "path": "PUBLICATION.md",
-      "bytes": 6667,
-      "sha256": "17c23ebbf9e0bd58986a8859079afd4a3cf6d5a715379b1918965a4e01063889"
+      "bytes": 7846,
+      "sha256": "cd5eb56ba0b52334571c20b08c830f5a48a5431a8fbdce9064de1dde0664d7a0"
     },
     {
       "path": "README.md",
-      "bytes": 5960,
-      "sha256": "a1be26aca8034b22f317e07f4b53168800d035b522f736f556e7f9561f5b9f9b"
+      "bytes": 6199,
+      "sha256": "21d22f8bf3a8526893270c7b2135e43c9a0ba780b994c985d68e4de399422d9b"
     },
     {
       "path": "THIRD-PARTY.md",

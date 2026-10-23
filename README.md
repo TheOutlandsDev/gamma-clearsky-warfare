@@ -2,17 +2,19 @@
 
 An unofficial, source-first companion for a slower Clear Sky Warfare campaign in S.T.A.L.K.E.R. GAMMA, with original optional addons, an experimental xrRazom host/join launcher, and structured playtest feedback.
 
-**Testing source only. Initial private solo startup tests passed on 2026-10-23, including an expanded starting loadout. Long-campaign stability, independent public installation and two-PC co-op remain unverified.** This repository supplies source and instructions; players obtain GAMMA, xrRazom, and other dependencies from their authors. It does not install the complete customized solo campaign. See the [startup investigation](docs/STARTUP-INVESTIGATION.md) before attempting a fresh campaign.
+**Testing source only. The private solo `test-02` baseline has confirmed startup, reload, packed-bolt, gun-trading and medical passes on 2026-10-23. Long-campaign stability, independent public installation and two-PC co-op remain unverified.** This repository supplies source and instructions; players obtain GAMMA, xrRazom, and other dependencies from their authors. It does not install the complete customized solo campaign. See the [startup investigation](docs/STARTUP-INVESTIGATION.md) before attempting a fresh campaign.
 
 ## Choose a testing track
 
 | Track | Available here | Status |
 |---|---|---|
-| Solo | Optional original carry, starter equipment, allegiance, zombie and loot-transfer addons; documented campaign targets | Private fresh-world startup passed with and without selected equipment. Public packaging and longer gameplay need testing. |
+| Solo | Optional original carry, starter equipment, allegiance, zombie and loot-transfer addons; documented campaign targets | Private test-02 baseline passes startup, two reloads, bolts, gun trading and medical treatment. Warfare pacing, public installation and longer play remain unverified. |
 | Experimental co-op | Host/join launcher source, one-shot game bridge, isolated-copy preflight, save-backup and content checks | Local/mock validation only; requires independently installed, matching xrRazom copies and a real two-PC test. |
 | AlifeTactics | Compatibility plan and fair-AI preset proposal | Not installed or bundled. The proposed solo engine update is not a co-op engine update. |
 
 Start with [installation and safe test setup](docs/INSTALL.md). The [dependency and setup map](docs/DEPENDENCIES.md) lists author sources, versions, relative install locations, load priority and how the private integrations work. The [publishing decision record](THIRD-PARTY.md) distinguishes original source we can publish, licensed dependencies awaiting artifact review and components that remain reference-only. Use the [solo test protocol](docs/SOLO-TESTING.md) for fresh-world and reload checks, or the [two-PC test checklist](docs/COOP-TESTING.md) for co-op. Use [Issues](https://github.com/TheOutlandsDev/gamma-clearsky-warfare/issues/new/choose) for reproducible bugs, balance observations, and feature requests.
+
+See the [confirmed test-02 baseline](docs/TEST02-BASELINE.md) for the evidence matrix. Preserve that save and branch future Warfare pacing tests under a new name.
 
 ## Campaign goals
 

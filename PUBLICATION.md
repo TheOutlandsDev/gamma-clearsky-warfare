@@ -40,3 +40,10 @@ This publication does not change the installed game, migrate saves, activate Ali
 - The maintainer reports traders' new stock, economy changes and added items functioning during test-02. This is attributed player evidence; exact inventory, trader-by-trader transaction and wallet measurements were not captured.
 - The final manual save and session evidence were preserved and hash-verified. Both observer records report the game's natural exit as `0x00000000`. The logger's own return status is a separate result.
 - This follow-up changes documentation and source hashes only. It does not establish economy balance, later save/reload reliability, long-campaign stability, public installation reproducibility or multiplayer compatibility. Original permissions and private-evidence exclusions are unchanged.
+
+## Confirmed baseline follow-up, 2026-10-23
+
+- Subsequent player confirmation establishes two successful reloads preserving items/progress, packed-bolt unpacking/use, correct money and inventory changes for gun purchases and sales, and already-working medical treatment. Earlier statements about unrecorded reload counts describe the information available before this follow-up.
+- The final test-02 manual save triplet is preserved in a separate private baseline and matches the closed-session snapshot by SHA-256. Profile/settings copies and engine/repair hashes retain the local setup context. Raw evidence and the save remain private.
+- README/status, startup findings and solo protocol link the consolidated test-02 matrix. Future manual Warfare pacing work uses a separate branch save; it has not begun in this update. No game, settings, mod or engine files were modified.
+- Source inventory, privacy patterns and relative-link checks cover this documentation-only revision. Functional solo passes do not establish quantitative price balance, long-campaign stability, public clean installation or multiplayer synchronization. Component permissions remain unchanged.
