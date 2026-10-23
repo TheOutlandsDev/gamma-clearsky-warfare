@@ -1,44 +1,53 @@
 # Private mod-stack startup investigation
 
-Recorded 2026-10-22. **Fresh-campaign startup is blocked; the current crash is unresolved.** These findings describe an isolated private GAMMA installation. They do not establish that an individual public addon or upstream author caused the failure.
+Updated 2026-10-23. **Initial fresh-world tests now pass on the repaired private solo installation.** This is a limited startup result, not confirmation of long-campaign or co-op stability. These findings concern a combined mod stack and do not establish fault by an individual public addon or upstream author.
 
-## What changed in the evidence
+## Current runtime evidence
 
-An earlier private revision loaded an existing Clear Sky save and opened Spore's trade window. Later attempts to create a fresh Warfare campaign failed. Save loading and new-world generation exercise different paths, so the earlier observation cannot clear the current stack.
+| Test | Observed result | Limits |
+|---|---|---|
+| `test-01`, no selected starting items | Maintainer reached the world; trace completed actor initialization; manual save triplet preserved and hash-verified | One startup observation |
+| `test-02`, expanded selected equipment | Maintainer reported a pass with substantially more items; a later actor-initialization completion and manual/autosave files were captured; game and MO2 were responding | Exact loadout, ammo and repeated reload count were not independently recorded |
 
-The first captured Lua failure followed Warfare initialization through `sim_board`, ZCP's `smr_pop` and `sim_squad_scripted.remove_npc` into native `unregister_member`. A local helper redundantly inspected/released the squad after native member removal, which already owns empty-squad cleanup. The redundant release was removed in the private test copy, and two optional mutant-variant replacements were disabled. Ordinary mutant and zombie settings were retained. LuaJIT compilation and mocked lifecycle/variant regressions pass. Subsequent desktop exits still occur, so this is a correction to an observed defect rather than a verified startup fix.
+The planned small starter recipe was not the actual expanded test-02 loadout. Follow [the solo test protocol](SOLO-TESTING.md) to record a fixed selection and repeat reloads. A previous Spore trade-window observation still does not establish successful purchases, sales or economy balance.
 
-The latest engine log does not contain a completed Lua error stack or explicit fatal message. Its final buffered sound-initialization line cannot identify the corrupting component. A callback BEGIN/END trace was added privately; a path-alias guard defect in that diagnostic was corrected offline. The corrected trace has not received a new runtime test.
+## Installation and failure evidence
 
-## Effective stack audit
+Earlier checks used a separate comparison installation. Inspection of the desktop shortcut established that the actual launch used a different solo installation. Repairs and diagnostic hashes were then matched to that launched root and its selected MO2 profile. A successful check in one copy cannot clear a different copy.
 
-The full solo profile contains 590 enabled mods. An audit resolved the actual Mod Organizer file providers, rather than treating every overwritten file as simultaneous execution:
+The actual failed run returned native exit code `0xC0000374`. Its callback and native-boundary trace reached mutant-squad cleanup after module initialization. During cleanup of a rodent squad, the same member ID appeared twice at removal; the final breadcrumb entered native member unregistering and did not return.
 
-- Twelve local/recent addons supply 267 script, LTX and XML paths, including 45 exact-path replacements. The earlier compatibility addon wins 21 scripts. Its recorded base files and candidate revisions were checked for drift.
-- Economy balancing intentionally replaces the Clear Sky WPO adapter and two Western Goods loot expressions. The surviving WPO adapter retains the Spore exception. Long Warfare's controller retains the earlier ownership-recursion fix. These shadows alone do not establish a conflict.
-- Loot-search transfer guards delegate through the existing inventory wrappers. Starter ammunition and trader DLTX overlaps are intentional declarations, though actual engine merging and transactions still require gameplay checks.
-- Western Goods' selected item/economy package also installs unconditional AI method overrides over Stealth Overhaul and AI Rework. This is a real integration boundary to resolve; it has not been established as the startup cause.
-- The medical adaptation bypasses a footstep voice helper expected by Voiced Actor Refined and has an invalid local-variable reference when legacy pain sounds are selected. This is a real later-gameplay defect, not evidence for the pre-world exit.
-- Medical HUD additions preserve the prior nodes and texture entries. Sixteen shader files are text-identical to their lower-priority providers. Identically named audio DLLs were hash-identical to the active base DLL; no binary replacement was warranted.
-- Ninety-one winning loose OGG files fully decoded, including 14 prior replacement music files and 73 Western Goods sounds. Two packed base motor sounds were not extracted or verified. Successful decoding does not establish engine compatibility.
+This strongly implicated mutation of the live squad-member container during iteration. Native member removal can change that container and retire an empty squad. It is evidence for a lifecycle defect, not a native crash-dump proof of the exact corrupting instruction. The final buffered sound-initialization log line was not a reliable attribution to sound or memory exhaustion.
 
-## Confirmed integration corrections applied privately
+## Lifecycle corrections applied privately
 
-Two narrow corrections are installed only in the isolated solo test copy, with original bytes retained and deployed hashes verified:
+The private repair changes three cooperating paths:
 
-- Western Goods keeps its item/economy helpers and all 11 callbacks, but no longer replaces the five existing GAMMA combat-ignore/camper methods. Its required animation state is added only when absent. Forty-five LuaJIT checks pass, including an original-version negative control, function/state identity, callback registration and preserved save/load behavior.
-- The medical adaptation exposes the zero-argument pain-voice helper expected by Voiced Actor Refined and selects a valid sound index in both voice settings. Twenty-two LuaJIT cases pass, including original-error reproduction, the actual voice wrapper, sound bounds, chance/cooldown edges and unchanged damage behavior.
+- Population cleanup/replacement/downsize paths snapshot member IDs before removal, rather than iterating a container that native removal changes. Cleanup avoids duplicate removals and querying a retired squad.
+- The simulation-board caller respects the retired result and optional replacement, stopping later operations on a squad that no longer exists.
+- The squad-creation helper accepts the absence of a surviving squad instead of dereferencing it after cleanup.
 
-These corrections address demonstrated integration defects. Neither is a verified fix for the current startup exit; gameplay was deferred at the maintainer's request. The complete third-party adapted scripts and diffs remain private.
+Original files and pre-repair saves were backed up and verified. The three deployed script hashes match their reviewed candidates. The active profile still contains 590 enabled real mods; the engine and mod list were not replaced as part of these lifecycle corrections. Existing optional mutant choices were retained.
 
-## Controlled comparison prepared
+Recorded offline checks cover 70 targeted cleanup cases and 11 contract cases. A compile-only pass accepted 1,040 effective physical Lua scripts, including the new loose helper override; this is not a claim that every archived script was extracted or gameplay-tested. Initial post-repair runtime observations are listed above. No repaired upstream script or full diff is distributed here.
 
-A separate 580-mod comparison profile disables only the ten recent economy, carry, hub, loot-search, goods, strategic-Warfare, starter, barter, medical and unarmed-zombie addons as a group. It retains the underlying GAMMA stack and earlier compatibility/ownership fixes. The full profile and selected profile were unchanged during preparation; settings were backed up and hash-verified.
+## Effective stack and other integration corrections
 
-This comparison is **not runtime-tested**. It shares the isolated test installation's settings and appdata, so it is for a separately named **new game only**. Loading an existing full-stack save with those addons disabled would not be a valid comparison. No save was deleted or migrated.
+The audit resolved actual winning MO2 providers rather than treating overwritten files as simultaneous execution. Intentional starter-ammunition, economy and trading declarations were distinguished from script-hook ownership collisions.
 
-When gameplay testing resumes, use Clear Sky, Hidden Base, Warfare and a legal default starter loadout. Record whether the world loads, then preserve the engine log and callback trace before another run. A successful comparison would narrow the fault to the removed group; a failed comparison would require investigating the retained layers. Neither outcome has been observed yet.
+Two earlier private corrections remain in place:
+
+- Western Goods retains its item/economy helpers and callbacks while preserving GAMMA's existing combat-ignore/camper methods. Its required animation state is added only when absent. The recorded 45 targeted checks cover hook identity, callbacks and save/load behavior.
+- The medical adaptation exposes the pain-voice helper expected by Voiced Actor Refined and uses a valid sound index in both voice settings. The recorded 22 targeted checks cover reproduction of the prior error, wrapper behavior, bounds and cooldown edges.
+
+These address demonstrated integration defects; the successful startup does not validate every affected gameplay feature. Earlier shader/audio identity and loose-sound decoding checks did not establish runtime compatibility. The 580-mod comparison profile was prepared in the separate installation and remains untested; no successful reduced-stack comparison is claimed.
+
+## Local diagnostics
+
+A private logging console backs up saves, records the selected profile and effective repair hashes, observes the exact launched game process and preserves native exit evidence. Callback/native-boundary breadcrumbs flush during startup and stop after the first actor update. The console reports administrator requirements explicitly; it does not silently change security settings. It distinguishes the game's exit code from successful evidence collection and never treats closing/detaching the console as a request to terminate the game.
+
+The deployed logger is currently specific to the maintainer's PC and is not published as a portable launcher. Recorded offline launcher checks passed 40 cases. Logging does not replace manual gameplay or prove the absence of later faults.
 
 ## Publication boundary
 
-This report publishes findings and reproducible test intent. It does not distribute the private whole-file compatibility patches, medical/WG source or assets, raw logs, dumps, saves, local account paths or network endpoints. Obtain upstream packages through [their documented author routes](DEPENDENCIES.md); [component permissions](../THIRD-PARTY.md) remain unchanged. Offline checks and prepared profiles do not constitute a finished solo or co-op release.
+This report publishes findings and test methods. It excludes private whole-file compatibility patches and diffs, medical/WG implementations or assets, the machine-specific logger, raw logs, dumps, saves, personal paths and network endpoints. Acquire upstream packages through [their author routes](DEPENDENCIES.md); [component permissions](../THIRD-PARTY.md) remain unchanged. The public source companion does not reproduce the complete repaired private installation. Independent installation, longer solo play and real two-PC tests remain release gates.
