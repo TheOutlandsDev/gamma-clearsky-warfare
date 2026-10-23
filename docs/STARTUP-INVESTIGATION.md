@@ -4,14 +4,11 @@ Updated 2026-10-23. **Initial fresh-world tests now pass on the repaired private
 
 ## Current runtime evidence
 
-| Test | Observed result | Limits |
-|---|---|---|
-| `test-01`, no selected starting items | Maintainer reached the world; trace completed actor initialization; manual save triplet preserved and hash-verified | One startup observation |
-| `test-02`, expanded selected equipment | Maintainer reported a pass with substantially more items; a later actor-initialization completion and manual/autosave files were captured; game and MO2 were responding | Exact loadout, ammo and repeated reload count were not independently recorded |
+`test-01` reached a fresh world without selected starting items. The player then passed `test-02` with expanded equipment and explicitly confirmed two reloads preserving items/progress, packed-bolt unpacking/use, correct gun-buy/sell money and inventory changes, traders/new items/economy and medical treatment. The [baseline test matrix](TEST02-BASELINE.md) distinguishes player-confirmed functions from captured startup/save/exit evidence.
 
-After the startup check, the maintainer reports test-02's traders, new goods and economy changes functioning in game. A final manual save was written, then the game closed normally. The observer's session and native-exit records agree on `0x00000000` and a natural exit; this is the actual game result, not merely the logger's return code. The final save and closed-session evidence were copied and hash-verified privately. Exact transaction/wallet measurements and the number of reloads remain unrecorded.
+The actor trace completed world initialization. The final manual save triplet was copied and hash-verified, and the observer recorded natural native exit `0x00000000`. A separately preserved `test-02` baseline matches that closed-session save and retains private settings/profile and engine/repair hashes. Future Warfare pacing tests must use a new save branch; no trial is started by this documentation update.
 
-The planned small starter recipe was not the actual expanded test-02 loadout. Follow [the solo test protocol](SOLO-TESTING.md) to record a fixed selection and repeat reloads. The broader test-02 report advances the earlier trade-window-only observation; quantified buying/selling and economy balance still need recorded transaction trials.
+The actual expanded starter list, ammunition and exact transaction amounts were not recorded. The pass does not imply the proposed minimal starter recipe was followed, that every trader/medical path was covered, or that long-campaign pacing and balance are validated. Historical offline checks below remain scoped to their recorded revisions.
 
 ## Installation and failure evidence
 

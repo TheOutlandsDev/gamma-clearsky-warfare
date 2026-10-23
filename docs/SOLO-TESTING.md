@@ -16,7 +16,11 @@ Keep a successful no-selected-equipment save separate from an equipped-start sav
 4. Wait 60 seconds near spawn. Check movement and inventory, then make the equipped-start save. Avoid combat, trades, packed bolts and treatment until this baseline is saved.
 5. Return to the menu and load that save twice. Check spawn/location, selected equipment and ammunition after each reload. Record each outcome separately.
 
-The private maintainer's `test-02` passed with a larger selection, not this exact minimal recipe. Its full item list and repeated-reload count were not captured, so that report must not be presented as execution of this fixed case. Future expanded cases should list every optional item and change one category at a time after the fixed case passes.
+The private maintainer's `test-02` passed with a larger selection, not this exact minimal recipe. Its full item list was not captured; the player subsequently confirmed two reloads with items/progress intact. That report must not be presented as execution of this exact fixed-loadout case. Future expanded cases should list every optional item and change one category at a time after the fixed case passes.
+
+## Current preserved baseline
+
+The [test-02 matrix](TEST02-BASELINE.md) records the player-confirmed reload, packed-bolt, gun-transaction, trader/item/economy and medical passes, plus captured save and normal-exit evidence. Preserve `test-02`; its separate private manual-save backup was hash-verified against the final clean-exit snapshot. Continue the upcoming pacing trial from a fresh named branch such as `warfare-pace-01`, without changing the tested stack or overwriting the baseline. The remaining baseline procedure below is for future independent comparisons, not a request to repeat already confirmed checks.
 
 ## Record and extend
 
