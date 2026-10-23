@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "publication_date": "2026-10-22",
+  "publication_date": "2026-10-23",
   "license_scope": "COPYRIGHT.md",
   "files": [
     {
@@ -110,8 +110,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1621,
-      "sha256": "a5c13d657af20b7e42aa75a3a5ceca5c577a02a89e3f50306e2e5c20983a22b1"
+      "bytes": 2496,
+      "sha256": "6ca6ef2e023cec70317004cd87ad201e0c3a7ab908f87ba9de841b2a5609bcca"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -189,14 +189,19 @@
       "sha256": "22fd6b89641d51ab9e3c8231439d683c0aeb60d6246410e5e354cddef5557dfd"
     },
     {
+      "path": "docs/SOLO-TESTING.md",
+      "bytes": 3543,
+      "sha256": "3b916379495a2a1c1fe9462fd5ce89470308e24cf480c2daa6c5b8e8e9682b2f"
+    },
+    {
       "path": "docs/STARTUP-INVESTIGATION.md",
-      "bytes": 6224,
-      "sha256": "fcc9e2db92a82d21bbc8625bee13f02974301e31ead643a2d7adb21983d68f7a"
+      "bytes": 6214,
+      "sha256": "96dbace3c916dc5231708adfef7b679dd32e8f792b82fdcd222c9e256385f6a0"
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 4080,
-      "sha256": "1e6ed25ddd6732865a128a04bc60a4aeaa6b0241b232661871afc20cce974232"
+      "bytes": 4556,
+      "sha256": "af864e18d27e8ba435f350ec9df26d248aa4d778f241320078ef2c75e6753db7"
     },
     {
       "path": "LICENSE",
@@ -215,13 +220,13 @@
     },
     {
       "path": "PUBLICATION.md",
-      "bytes": 4393,
-      "sha256": "8a29198d54ae29aa910e80b5afa17a060a22419b113b20c305d342a4441f2670"
+      "bytes": 5887,
+      "sha256": "a62dbd9c3316f17f3f53e5930944c8d0930c3bfa01faafd535220953e76bfeb3"
     },
     {
       "path": "README.md",
-      "bytes": 5787,
-      "sha256": "12abe9532f8f98beab1b8b3254ab5d0aa0f81a46b17dd0cec00f214615af339b"
+      "bytes": 5960,
+      "sha256": "a1be26aca8034b22f317e07f4b53168800d035b522f736f556e7f9561f5b9f9b"
     },
     {
       "path": "THIRD-PARTY.md",

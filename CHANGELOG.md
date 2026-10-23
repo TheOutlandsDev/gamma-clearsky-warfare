@@ -1,3 +1,10 @@
+# Private solo startup test update - 2026-10-23
+
+- Record successful private fresh-world starts without selected equipment (`test-01`) and with an expanded selection (`test-02`), supported by completed actor initialization and preserved save files. Exact expanded inventory, ammunition and repeated reloads remain unrecorded.
+- Document the actual-launch installation check, native duplicate-removal evidence and privately applied three-part squad-lifecycle correction, with the limits of offline and runtime observations.
+- Add a portable solo testing protocol covering a fixed 365-point starter selection, save/reload checks and later feature trials.
+- Describe the local logging/admin behavior without distributing the machine-specific logger, upstream repairs, diffs or raw evidence. Public clean-install, long-campaign and real two-PC validation remain pending.
+
 # Mod-stack investigation update - 2026-10-22
 
 - Flag the unresolved fresh-campaign startup exit in the private full stack and separate it from the earlier successful save-load observation.
