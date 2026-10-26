@@ -2,6 +2,16 @@
 
 An unofficial, source-first companion for a slower Clear Sky Warfare campaign in S.T.A.L.K.E.R. GAMMA, with original optional addons, an experimental xrRazom host/join launcher, and structured playtest feedback.
 
+## Before you try it
+
+| Path | Requirements and first step |
+| --- | --- |
+| Solo optional addons | Your own working GAMMA/MO2 setup, a separate test profile or copy and verified save/configuration backups. [Install one optional addon](docs/INSTALL.md#solo-optional-addons). |
+| Experimental host/join | Windows x64, the .NET Framework 4.x compiler, Windows PowerShell 5.1, separately obtained matching xrRazom 1.4 Slim copies and private Tailscale access. [Prepare the independent co-op copy](coop/README.md). |
+| Current evidence | [Feature status](docs/STATUS.md) and the [test-02 baseline](docs/TEST02-BASELINE.md) describe the checked scope. Two-PC co-op, independent public installation and long-campaign stability remain unverified. |
+
+This repository supplies original source and instructions. Obtain GAMMA, xrRazom and addon dependencies from their authors through the [dependency map](docs/DEPENDENCIES.md).
+
 **Testing source only. The private solo `test-02` baseline has confirmed startup, reload, packed-bolt, gun-trading and medical passes on 2026-10-23. Long-campaign stability, independent public installation and two-PC co-op remain unverified.** This repository supplies source and instructions; players obtain GAMMA, xrRazom, and other dependencies from their authors. It does not install the complete customized solo campaign. See the [startup investigation](docs/STARTUP-INVESTIGATION.md) before attempting a fresh campaign.
 
 ## Choose a testing track
