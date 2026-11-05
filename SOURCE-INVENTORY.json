@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "publication_date": "2026-10-23",
+  "publication_date": "2026-11-05",
   "license_scope": "COPYRIGHT.md",
   "files": [
     {
@@ -110,8 +110,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 4087,
-      "sha256": "46ab542daac3499db0fbc28a2023b440904b1052b88349e297fe56faa28d30a6"
+      "bytes": 4801,
+      "sha256": "7a277d5ed2ef2b1a0697f216e93da6f3abcaab830c27fce22b08a5aa654b651a"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -165,8 +165,8 @@
     },
     {
       "path": "COPYRIGHT.md",
-      "bytes": 1021,
-      "sha256": "d9e51c2f232ade44039e8c2043f993f88bd9a243dae52a4dbef3ca29d551c99e"
+      "bytes": 1054,
+      "sha256": "8477cffd6b5c32a7cfb31c61fbb83da6b3ddc40b24f95a3b35925ff44b459b9c"
     },
     {
       "path": "docs/ALIFETACTICS.md",
@@ -204,6 +204,11 @@
       "sha256": "8cc6e51a6663eb6d172f38eeedef27a2ef1d0cc6d0f5c862611f235d000dcfc8"
     },
     {
+      "path": "docs/STORY-WORKSHOP.md",
+      "bytes": 3044,
+      "sha256": "54360bca8818fc837f55693547a0a0f90740e3f87e36f0b7b25756ddc0ba8345"
+    },
+    {
       "path": "docs/TEST02-BASELINE.md",
       "bytes": 3234,
       "sha256": "e7619a49fc6ab8ba8e398e5b5116deeeee75b14cbd896ccb32216ef645109e85"
@@ -225,13 +230,63 @@
     },
     {
       "path": "PUBLICATION.md",
-      "bytes": 7846,
-      "sha256": "cd5eb56ba0b52334571c20b08c830f5a48a5431a8fbdce9064de1dde0664d7a0"
+      "bytes": 8635,
+      "sha256": "8f5747659b1549cee1b8f1040bdb896880a6517153e1170c6ec50732c2c96a8a"
     },
     {
       "path": "README.md",
-      "bytes": 7128,
-      "sha256": "e195c6ecab28a38be816973dd113860d17e3f03ff048d4952ef91bc3719f92d4"
+      "bytes": 7435,
+      "sha256": "13ad22015d801f055295a2f69ea41b0b08b707c4ad3d0a86b912a0a92cf4d18d"
+    },
+    {
+      "path": "story/bridge/modxml_zzz_outlands_session_bridge.script",
+      "bytes": 2494,
+      "sha256": "fd6a08b9d7368cb492a7ddba43976c71d5943da35d8f0451db443e83f8c53bcc"
+    },
+    {
+      "path": "story/bridge/modxml_zzz_story_faction_radio.script",
+      "bytes": 1348,
+      "sha256": "8194508d04379831ad23a8c22c35b528badb82e86474e9424e95996c8b1a1c88"
+    },
+    {
+      "path": "story/console/.gitignore",
+      "bytes": 26,
+      "sha256": "e8bc935ce727f1809c792f4c5d26c5fc75ba2b7df7fc9390c56c8892f6a6007f"
+    },
+    {
+      "path": "story/console/package-lock.json",
+      "bytes": 1460,
+      "sha256": "b91e17ffe51d27712a19c6450ef63b5177e103eef7c1e41ee8a3363cbadfb533"
+    },
+    {
+      "path": "story/console/package.json",
+      "bytes": 317,
+      "sha256": "e0a023f530c885fffb5a41171740a94bb62e036470110415721c92b753869cee"
+    },
+    {
+      "path": "story/console/README.md",
+      "bytes": 1118,
+      "sha256": "3886762023619add759e94dc70f4b13796c72db83c0481c908eaa2520ed01727"
+    },
+    {
+      "path": "story/console/src/server.ts",
+      "bytes": 10048,
+      "sha256": "c04c05e0b44fd579c00950a5831fa0953c70d92ee8161131b74aa3d23eb1062e"
+    },
+    {
+      "path": "story/console/test/integration.mjs",
+      "bytes": 3774,
+      "sha256": "b8d179ac78b390c4dc392e02bc87f72b9a8a82a2f79f036db44c91ad44a4194a"
+    },
+    {
+      "path": "story/console/tsconfig.json",
+      "bytes": 274,
+      "sha256": "b48d2b239020ff0213b52a1242756e86e8a98bbd542ef34d4ef10aa2b1d72fbf"
+    },
+    {
+      "path": "story/README.md",
+      "bytes": 1062,
+      "sha256": "787afca7baeeeb09c8c35529e628e55369141bfade797b4e7d4024694e6b4afc"
     },
     {
       "path": "THIRD-PARTY.md",
@@ -240,8 +295,8 @@
     },
     {
       "path": "tools/verify_publication.py",
-      "bytes": 4177,
-      "sha256": "6a6b0b6cb5fa46aea3c614622aebf5a4959a9af8ba2dd16f2315220f1a198c2f"
+      "bytes": 4192,
+      "sha256": "ebf86927f6bc831ab4c2fa0fde2017c0268eec5615a21a7be02d9799b3ab6570"
     }
   ]
 }

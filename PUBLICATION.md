@@ -1,5 +1,11 @@
 # Initial publication verification
 
+## Experimental Story source update, 2026-11-05
+
+- The `story/` tree contains original TypeScript console source, synthetic integration test and two small Lua bridges. It contains no generated JavaScript, dependencies, runtime events, game assets, saves, profile or private machine settings.
+- The live private-install evidence is limited to a fresh Loner Story start at Rookie Village and local console observation. Story save/reload, trader transactions, economy balance, co-op join and Linux headless hosting remain unverified.
+- The source inventory and publication audit include the new TypeScript and JavaScript module suffixes. `npm run build` and `npm test` were run against the source in the private test installation; remote CI for this update must be checked separately.
+
 Reviewed 2026-10-22 for a source-only public testing release.
 
 - Four original optional solo addon modules contain seven source/config files; their hashes match the audited local originals. All four Lua files compile in LuaJIT. Historical native behavior checks and remaining gameplay checks are recorded in their READMEs.

@@ -1,3 +1,10 @@
+# Experimental Loner Story source and playtest status - 2026-11-05
+
+- Publish the original local TypeScript session console and two small Lua event/chat bridges as reviewable source, with no runtime events, game files, profiles or third-party implementations.
+- Record the fresh Loner Story startup at Rookie Village and the passing static/synthetic checks. The console policy match is observational.
+- Provide a solo playtest checklist for saves, Sidorovich transactions, economy and presentation. These gameplay checks and real multiplayer remain open.
+- Correct the private combined-launch script's local policy check to recognize Loner; that machine-specific script is not included in this repository.
+
 # Confirmed test-02 baseline before Warfare pacing - 2026-10-23
 
 - Record player-confirmed passes: two reloads retain items/progress, packed bolts unpack/work, buying and selling guns update money/inventory correctly, traders/new items/economy function and medical treatment already works.

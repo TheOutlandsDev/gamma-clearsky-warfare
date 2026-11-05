@@ -1,0 +1,32 @@
+-- Workshop overlay. The host relays major faction relation changes through
+-- xrRazom chat while the existing game relation code retains its PDA notice.
+local installed = false
+
+local labels = {
+    st_relations_declared_war = "WAR",
+    st_relations_alliance = "ALLIANCE",
+    st_relations_deteriorating = "ALLIANCE ENDED",
+    st_relations_cease_fire = "CEASEFIRE",
+}
+
+local function install()
+    if installed or not game_relations or type(game_relations.send_news) ~= "function" then return end
+    local original = game_relations.send_news
+    game_relations.send_news = function(faction1, faction2, event, icon)
+        original(faction1, faction2, event, icon)
+        if not (XrrIsHosted and XrrIsHosted() and XrrPlayers) then return end
+        local players = XrrPlayers()
+        if not (players and players.SendChat) then return end
+        local first = game.translate_string(faction1)
+        local second = game.translate_string(faction2)
+        local label = labels[event] or game.translate_string(event)
+        local message = string.format("[Faction Radio] %s / %s: %s", first, second, label)
+        local ok, err = pcall(players.SendChat, players, message)
+        if not ok then printf("![Faction Radio] chat relay failed: %s", tostring(err)) end
+    end
+    installed = true
+end
+
+function on_game_start()
+    install()
+end

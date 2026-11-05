@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 INVENTORY = ROOT / "SOURCE-INVENTORY.json"
-ALLOWED_SUFFIXES = {".md", ".json", ".yml", ".yaml", ".py", ".ps1", ".cs", ".script", ".ltx"}
+ALLOWED_SUFFIXES = {".md", ".json", ".yml", ".yaml", ".py", ".ps1", ".cs", ".script", ".ltx", ".ts", ".mjs"}
 SPECIAL_FILES = {"LICENSE", ".gitignore"}
 PRIVATE_NAMES = {"launcher-settings.json", "coop-install.json", "inspection.json", "self-test-results.txt"}
 

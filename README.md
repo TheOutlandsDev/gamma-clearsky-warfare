@@ -2,6 +2,8 @@
 
 An unofficial, source-first companion for a slower Clear Sky Warfare campaign in S.T.A.L.K.E.R. GAMMA, with original optional addons, an experimental xrRazom host/join launcher, and structured playtest feedback.
 
+**Separate Story workshop:** A local Loner Story campaign is now in playtesting. See the [Story workshop status and test checklist](docs/STORY-WORKSHOP.md) and [original console and bridge source](story/README.md). This is an experimental track; it does not replace the Clear Sky Warfare baseline below.
+
 ## Before you try it
 
 | Path | Requirements and first step |

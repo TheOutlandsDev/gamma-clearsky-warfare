@@ -1,0 +1,80 @@
+-- Private local workshop bridge. Writes only fixed, non-identifying game events.
+local last_role = nil
+local last_heartbeat = 0
+local warned = false
+
+local function current_role()
+    if XrrIsHosted and XrrIsHosted() then return "host" end
+    if XrrIsConnected and XrrIsConnected() then return "peer" end
+    return "solo"
+end
+
+local function campaign_state()
+    local faction = "unknown"
+    pcall(function()
+        local value = alife_storage_manager.get_state().default_faction
+        if type(value) == "string" and value:match("^[a-z_]+$") then
+            faction = value
+        end
+    end)
+    local story = "null"
+    if has_alife_info then
+        story = has_alife_info("story_mode_disabled") and "false" or "true"
+    end
+    return faction, story
+end
+
+local function host_peer_count(role)
+    if role ~= "host" then return "null" end
+    local count = "null"
+    pcall(function()
+        local roster = XrrPlayers and XrrPlayers()
+        if roster then
+            local value = roster:GetPeerCount()
+            if type(value) == "number" and value >= 0 and value <= 64 then
+                count = tostring(math.floor(value))
+            end
+        end
+    end)
+    return count
+end
+
+local function emit(kind, role)
+    local ok, err = pcall(function()
+        local faction, story = campaign_state()
+        local peers = host_peer_count(role)
+        local path = getFS():update_path("$app_data_root$", "outlands-events.jsonl")
+        local stream = assert(io.open(path, "a"))
+        stream:write(string.format('{"version":1,"kind":"%s","unix_time":%d,"role":"%s","faction":"%s","story_mode":%s,"peer_count":%s}\n', kind, os.time(), role, faction, story, peers))
+        stream:close()
+    end)
+    if not ok and not warned then
+        warned = true
+        printf("![OUTLANDS] Local event bridge unavailable: %s", tostring(err))
+    end
+end
+
+local function on_game_load()
+    last_role = current_role()
+    emit("world_loaded", last_role)
+    last_heartbeat = os.time()
+end
+
+local function on_actor_update()
+    if not db.actor then return end
+    local role = current_role()
+    if role ~= last_role then
+        last_role = role
+        emit("world_role", role)
+    end
+    local now = os.time()
+    if now - last_heartbeat >= 10 then
+        last_heartbeat = now
+        emit("world_heartbeat", role)
+    end
+end
+
+function on_game_start()
+    RegisterScriptCallback("on_game_load", on_game_load)
+    RegisterScriptCallback("actor_on_update", on_actor_update)
+end
